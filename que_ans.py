@@ -2,12 +2,6 @@
 
 # use in the new method, the enum instead of using if
 
-# use the lines below for change when randval == 3
-
-#numbers = [randrange(1, 17) for _ in range(randrange(2,6))]
-#question = 'The question is: ' + ' + '.join(map(str, numbers))
-#answer = sum(numbers)
-
 from random import randrange
 
 class QA:
@@ -31,15 +25,15 @@ class QA:
 		elif rand_val == 3:
 			answer = randrange(1,21)
 			question = str(answer)
-			for i in range(randrange(2,6)):
-				a = randrange(1,17)
-				if randrange(100) < 70:
-					answer += a
-					question += " + {}".format(a)
-				else:
-					answer -= a
-					question += " - {}".format(a)
-			question = "question is {}".format(question)
+			if randrange(100) < 70:
+				numbers = [randrange(1, 17) for _ in range(randrange(2,6))]
+				question = 'The question is: ' + ' + '.join(map(str, numbers))
+				answer = sum(numbers)
+			else:
+				numbers = [randrange(1, 17) for _ in range(randrange(2,6))]
+				question = 'The question is: ' + ' - '.join(map(str, numbers))
+				numbers = [numbers[idx]*-1 if idx>0 else numbers[idx] for idx,i in enumerate(numbers)]
+				answer = sum(numbers)
 		elif rand_val == 4:
 			a = randrange(20,60) * randrange(25,55) * randrange(2,15)
 			b = randrange(25,50) * randrange(15,65) * randrange(2,10)
