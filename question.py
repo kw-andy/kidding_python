@@ -1,13 +1,9 @@
-# future upgrade
-
-# find a way to remove the good = 0 and the bad = 0
 
 import que_ans
 from termcolor import colored
 
 def question_answer():
-	good = 0
-	bad = 0
+	good,bad = 0,0
 	while True:
 		qa = que_ans.QA
 		question,answer = qa.new()
