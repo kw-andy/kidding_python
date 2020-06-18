@@ -20,9 +20,9 @@ The code is easy to tune and change with kid, it's a basis for a coding play too
 - use the lines below for change when `randval == 3`
 
 ```python
-~numbers = [randrange(1, 17) for _ in range(randrange(2,6))]~
-~question = 'The question is: ' + ' + '.join(map(str, numbers))~
-~answer = sum(numbers)~
+numbers = [randrange(1, 17) for _ in range(randrange(2,6))]
+question = 'The question is: ' + ' + '.join(map(str, numbers))
+answer = sum(numbers)
 ```
 
 ##### upgrade for question
